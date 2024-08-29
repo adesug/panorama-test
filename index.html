@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+<!-- <!DOCTYPE HTML>
 <html>
 <head>
     <meta charset="utf-8">
@@ -16,11 +16,61 @@
 <body>
 
 <div id="panorama"></div>
+
 <script>
 pannellum.viewer('panorama', {
     "type": "equirectangular",
     "panorama": "https://res.cloudinary.com/desug/image/upload/v1724915667/R0011193_qfdonl.jpg"
 });
+</script>
+
+
+
+</body>
+</html> -->
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A simple example</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+    <style>
+    .panorama-container {
+        width: 1350px;
+        margin-bottom: 20px; /* Jarak antara gambar */
+    }
+    .panorama {
+        width: 100%;
+        height: 500px;
+    }
+    </style>
+</head>
+<body>
+
+<div class="panorama-container">
+    <div id="panorama1" class="panorama"></div>
+</div>
+
+<div class="panorama-container">
+    <div id="panorama2" class="panorama"></div>
+</div>
+
+
+
+<script>
+pannellum.viewer('panorama1', {
+    "type": "equirectangular",
+    "panorama": "https://res.cloudinary.com/desug/image/upload/v1724915667/R0011193_qfdonl.jpg"
+});
+
+pannellum.viewer('panorama2', {
+    "type": "equirectangular",
+    "panorama": "https://res.cloudinary.com/desug/image/upload/v1724917481/R0011179_uima4p.jpg"
+});
+
+
 </script>
 
 </body>
