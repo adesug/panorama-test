@@ -7,36 +7,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
     <style>
-    #panorama {
-        width: 1350px;
-        height: 500px;
-    }
-    </style>
-</head>
-<body>
-
-<div id="panorama"></div>
-
-<script>
-pannellum.viewer('panorama', {
-    "type": "equirectangular",
-    "panorama": "https://res.cloudinary.com/desug/image/upload/v1724915667/R0011193_qfdonl.jpg"
-});
-</script>
-
-
-
-</body>
-</html> -->
-<!DOCTYPE HTML>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A simple example</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
-    <style>
     .panorama-container {
         width: 1350px;
         margin-bottom: 20px; /* Jarak antara gambar */
@@ -71,6 +41,65 @@ pannellum.viewer('panorama2', {
 });
 
 
+</script>
+
+</body>
+</html> -->
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hot spots</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+    <style>
+    #panorama {
+        width: 600px;
+        height: 400px;
+    }
+    </style>
+</head>
+<body>
+
+<div id="panorama"></div>
+<script>
+pannellum.viewer('panorama', {
+    "type": "equirectangular",
+    "panorama": "https://res.cloudinary.com/desug/image/upload/v1724915667/R0011193_qfdonl.jpg",
+    "autoRotate": -2,
+    "autoLoad": true,
+    /*
+     * Uncomment the next line to print the coordinates of mouse clicks
+     * to the browser's developer console, which makes it much easier
+     * to figure out where to place hot spots. Always remove it when
+     * finished, though.
+     */
+    //"hotSpotDebug": true,
+    "hotSpots": [
+        {
+            "pitch": 14.1,
+            "yaw": 1.5,
+            "type": "info",
+            "text": "Klik untuk melihat dalam masjid",
+            "clickHandlerFunc": function() {
+                window.location.href = 'dalam_masjid.html';
+            }
+        },
+        // {
+        //     "pitch": -9.4,
+        //     "yaw": 222.6,
+        //     "type": "info",
+        //     "text": "Art Museum Drive"
+        // },
+        // {
+        //     "pitch": -0.9,
+        //     "yaw": 144.4,
+        //     "type": "info",
+        //     "text": "North Charles Street"
+        // }
+    ]
+});
 </script>
 
 </body>
